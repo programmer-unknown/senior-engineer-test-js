@@ -7,7 +7,7 @@ router.post("/", jobValidation, validationResult, (req, res) => {
   jobs
     .bulkCreate(req.body)
     .then(() => {
-      res.send("inserted into database");
+      res.status(204).send();
     })
     .catch((err) => {
       console.log(err);
